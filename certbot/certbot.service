@@ -1,0 +1,7 @@
+[Unit]
+Description=Certbot
+
+[Service]
+Type=oneshot
+ExecStart=/bin/certbot --no-self-upgrade -q renew
+PrivateTmp=true
