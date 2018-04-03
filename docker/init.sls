@@ -1,5 +1,8 @@
 # Make sure docker-ce is installed but supply its dedicated partition, first.
 
+include:
+  - aws
+
 docker:
   mount.mounted:
     - name: /var/lib/docker
@@ -24,3 +27,9 @@ docker:
     - require:
       - pkg: docker
   pip.installed: []
+
+ecr-login:
+  cmd.run:
+    - name: $(aws ecr get-login --no-include-email --region eu-central-1)
+    - require:
+      - file: /root/.aws/credentials

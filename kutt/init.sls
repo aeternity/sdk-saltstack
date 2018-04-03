@@ -2,13 +2,12 @@
 
 include:
   - docker
-  - aws
 
 republica/kutt:
   docker_image.present:
     - name: 166568770115.dkr.ecr.eu-central-1.amazonaws.com/republica/kutt
     - require:
-      - cmd: republica/kutt
+      - cmd: ecr-login
   docker_container.running:
     - name: kutt
     - image: 166568770115.dkr.ecr.eu-central-1.amazonaws.com/republica/kutt
@@ -17,8 +16,6 @@ republica/kutt:
     - require:
       - docker_image: republica/kutt
       - docker_container: neo4j
-  cmd.run:
-    - name: $(aws ecr get-login --no-include-email --region eu-central-1)
 
 neo4j:
   docker_image.present: []
