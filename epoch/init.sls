@@ -5,7 +5,7 @@ include:
 
 aeternity/epoch:
   docker_image.present:
-    - name: aeternity/epoch:v0.10.0
+    - name: aeternity/epoch:v0.10.1
   docker_container.running:
     - name: epoch
     - image: aeternity/epoch
