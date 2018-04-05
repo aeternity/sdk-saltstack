@@ -2,6 +2,10 @@
 peers:
   - aenode://pp$noKey@localhost:3015
 
+http:
+  internal:
+    listen_address: 0.0.0.0
+
 keys:
   password: "top secret"
   dir: ./keys
