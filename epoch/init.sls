@@ -11,7 +11,7 @@ aeternity/epoch:
     - image: aeternity/epoch:v0.10.1
     - port_bindings:
       - 3013:3013
-      - 3014:3014
+      - 3113:3113
     - binds:
       - /etc/epoch/config.yaml:/home/epoch/config.yaml:Z
     - environment:
