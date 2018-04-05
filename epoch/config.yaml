@@ -1,5 +1,6 @@
 ---
-peers: []
+peers:
+  - aenode://pp$noKey@localhost:3015
 
 keys:
   password: "top secret"
