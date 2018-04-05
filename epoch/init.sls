@@ -12,9 +12,15 @@ aeternity/epoch:
     - port_bindings:
       - 3013:3013
       - 3014:3014
-    - volumes:
-      - {{ slspath }}/epoch.yaml:/home/epoch/epoch.yaml:Z
+    - binds:
+      - /etc/epoch/config.yaml:/home/epoch/config.yaml:Z
     - environment:
-      - EPOCH_CONFIG: /home/epoch/epoch.yaml
+      - EPOCH_CONFIG: /home/epoch/config.yaml
     - require:
       - docker_image: aeternity/epoch
+      - file: /etc/epoch/config.yaml
+
+/etc/epoch/config.yaml:
+  file.managed:
+    - source: salt://epoch/config.yaml
+    - makedirs: true
