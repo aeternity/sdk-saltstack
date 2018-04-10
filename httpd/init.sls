@@ -13,5 +13,11 @@ httpd:
     - require:
       - pkg: httpd
 
+/etc/httpd/conf.d/ssl.conf:
+  file.managed:
+    - source: salt://httpd/ssl.conf
+    - require:
+      - pkg: httpd
+
 /etc/httpd/conf.d/sites:
   file.directory
