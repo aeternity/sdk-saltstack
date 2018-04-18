@@ -1,0 +1,9 @@
+[Unit]
+Description=Jenkins Slave
+Wants=network.target
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/java -jar /usr/share/java/jenkins-slave.jar -jnlpUrl https://{{server}}/computer/{{name}}/slave-agent.jnlp -secret {{secret}} -workDir /var/lib/jenkins
+User=jenkins
+Restart=always

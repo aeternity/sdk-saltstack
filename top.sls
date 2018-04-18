@@ -6,3 +6,4 @@ base:
     - kutt
     - httpd.republica
     - epoch
+    - jenkins.slave
