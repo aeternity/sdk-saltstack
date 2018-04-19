@@ -20,7 +20,7 @@ jenkins-slave:
         name: {{salt['grains.get']('host')}}
   service.running:
     - enable: true
-    - watch_in:
+    - watch:
       - file: jenkins-slave
     - require:
       - user: jenkins-slave
