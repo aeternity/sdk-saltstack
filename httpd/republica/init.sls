@@ -2,7 +2,7 @@ include:
   - httpd
   - certbot
 
-{%- for site in ['aet.li', 'republica.aepps.com'] %}
+{%- for site in ['aet.li', 'republica.aepps.com', 'republica-pos.aepps.com'] %}
 /etc/httpd/conf.d/sites/{{ site }}.conf:
   file.managed:
     - source: salt://httpd/template.conf.j2
