@@ -12,7 +12,7 @@ republica/pos:
   docker_container.running:
     - name: pos
     - image: 166568770115.dkr.ecr.eu-central-1.amazonaws.com/republica/pos
-    - port_bindings: 5000:5000
+    - port_bindings: 5001:5000
     - require:
       - docker_image: republica/pos
 
