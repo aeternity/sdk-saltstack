@@ -1,0 +1,11 @@
+{
+  "POSTGRES_HOST": "db",
+  "POSTGRES_USER": "postgres",
+  "POSTGRES_PASSWORD": "postgres",
+  "POSTGRES_DB": "posapp",
+  "APP_SECRET": "{{salt['pillar.get']('pos:secret')}}",
+  "POS_ACCESS_KEY": "{{salt['pillar.get']('pos:key')}}",
+  "EPOCH_NODE": "republica.aepps.com",
+  "WALLET_PRIV": "{{salt['pillar.get']('pos:wallet')}}",
+  "WALLET_PUB": "ak$3gVuduh7vR9G7Hq3TpFaA7q9oQkMZZF2VsUxDYZabNeKC1uaqtjpKSth7wPn9dxnUzsHoT2fa6GPUzepbDXMHyC2F3HupT"
+}
