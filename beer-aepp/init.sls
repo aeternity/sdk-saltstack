@@ -12,7 +12,7 @@ republica/beer-aepp:
   docker_container.running:
     - name: beer-aepp
     - image: 166568770115.dkr.ecr.eu-central-1.amazonaws.com/republica/beer-aepp
-    - port_bindings: 5000:5000
+    - port_bindings: 3001:3000
     - require:
       - docker_image: republica/beer-aepp
 
