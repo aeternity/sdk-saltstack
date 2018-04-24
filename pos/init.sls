@@ -12,10 +12,9 @@ republica/pos:
   docker_container.running:
     - name: pos
     - image: 166568770115.dkr.ecr.eu-central-1.amazonaws.com/republica/pos
-    - command: -c settings.json
     - port_bindings: 5000:5000
     - binds:
-      - /etc/pos/settings.json:/app/settings.json:ro
+      - /etc/pos/settings.json:/data/conf/settings.json:ro
     - links: pos-postgres:db
     - require:
       - docker_image: republica/pos
