@@ -10,7 +10,8 @@ include:
     - replace: false
     - context:
         hostname: {{ site }}
-        config: {{ slspath }}/{{ site }}.conf
+        https_config: {{ slspath }}/{{ site }}-https.conf
+        http_config: {{ slspath }}/{{ site }}-http.conf
     - watch_in:
       - service: httpd
     - require:

@@ -1,6 +1,7 @@
 <VirtualHost *:80>
   ServerName {{hostname}}
-  Redirect permanent / https://{{hostname}}/
+
+{% include http_config %}
 </VirtualHost>
 
 <IfModule mod_ssl.c>
@@ -11,6 +12,6 @@
   TransferLog logs/{{hostname}}_access_log
   LogLevel warn
 
-{% include config %}
+{% include https_config %}
 </VirtualHost>
 </IfModule>
