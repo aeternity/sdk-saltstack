@@ -5,6 +5,8 @@ base:
   republica.aepps.com:
     - kutt
     - httpd.republica
-    - epoch
     - jenkins.slave
     - pos
+
+  epoch.in.aepps.com:
+    - epoch
