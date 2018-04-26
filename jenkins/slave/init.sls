@@ -3,7 +3,6 @@
 /usr/share/java/jenkins-slave.jar:
   file.managed:
     - source: https://{{salt['pillar.get']('ci:host')}}/jnlpJars/agent.jar
-    - source_hash: 1b45ea8f68157f5270e72108550df60807b3e40a932615b9370bf1a2edc3d4db
 
 java:
   pkg.installed:
