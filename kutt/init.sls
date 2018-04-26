@@ -42,3 +42,11 @@ neo4j:
       - NEO4J_AUTH: none
     - require:
       - docker_image: neo4j
+    - binds:
+      - neo4j-db:/data:rw
+    - require:
+      - docker_volume: neo4j-db
+
+neo4j-db:
+  docker_volume.present:
+    - driver: local
