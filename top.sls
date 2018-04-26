@@ -7,5 +7,4 @@ base:
     - httpd.republica
     - epoch
     - jenkins.slave
-    - beer-aepp
     - pos
