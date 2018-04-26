@@ -3,6 +3,7 @@
 /usr/share/java/jenkins-slave.jar:
   file.managed:
     - source: https://{{salt['pillar.get']('ci:host')}}/jnlpJars/agent.jar
+    - skip_verify: true
 
 java:
   pkg.installed:
