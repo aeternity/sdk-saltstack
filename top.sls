@@ -1,6 +1,7 @@
 base:
   '*':
     - zsh
+    - limits
 
   republica.aepps.com:
     - kutt
