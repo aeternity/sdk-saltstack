@@ -6,6 +6,11 @@ httpd:
     - require:
       - pkg: httpd
       - file: /etc/httpd/conf/httpd.conf
+    - watch:
+      - file: /etc/httpd/conf/httpd.conf
+      - file: /etc/httpd/conf.d/ssl.conf
+      - file: /etc/httpd/conf.d/limits.conf
+      - file: /etc/httpd/conf.modules.d/00-mpm.conf
 
 /etc/httpd/conf/httpd.conf:
   file.append:
