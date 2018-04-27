@@ -16,6 +16,7 @@ republica/pos:
     - binds:
       - /etc/pos/settings.json:/data/conf/settings.json:ro
     - links: pos-postgres:db
+    - ulimits: nofile=10000:10000
     - require:
       - docker_image: republica/pos
       - docker_container: postgres
