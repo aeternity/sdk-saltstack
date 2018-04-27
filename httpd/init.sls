@@ -19,5 +19,17 @@ httpd:
     - require:
       - pkg: httpd
 
+/etc/httpd/conf.d/limits.conf:
+  file.managed:
+    - source: salt://httpd/limits.conf
+    - require:
+      - pkg: httpd
+
+/etc/httpd/conf.modules.d/00-mpm.conf:
+  file.managed:
+    - source: salt://httpd/mpm.conf
+    - require:
+      - pkg: httpd
+
 /etc/httpd/conf.d/sites:
   file.directory
