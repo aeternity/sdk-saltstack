@@ -26,6 +26,8 @@ docker:
     - enable: true
     - require:
       - pkg: docker
+    - watch:
+      - file: /etc/systemd/system/docker.service.d/override.conf
   pip.installed: []
 
 ecr-login:
@@ -33,3 +35,12 @@ ecr-login:
     - name: $(aws ecr get-login --no-include-email --region eu-central-1)
     - require:
       - file: /root/.aws/credentials
+
+/etc/systemd/system/docker.service.d/override.conf:
+  file.managed:
+    - source: salt://docker/override.conf
+    - makedirs: true
+  cmd.run:
+    - name: systemctl daemon-reload
+    - watch:
+      - file: /etc/systemd/system/docker.service.d/override.conf
